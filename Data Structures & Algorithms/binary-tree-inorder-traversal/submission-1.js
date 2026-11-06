@@ -1,0 +1,29 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     constructor(val = 0, left = null, right = null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    /**
+     * @param {TreeNode} root
+     * @return {number[]}
+     */
+    inorderTraversal(root) {
+        const res = []
+        const inOrderDfs = (node) =>{
+            if(!node) return
+            // pre
+            inOrderDfs(node.left)
+            res.push(node.val) // in
+            inOrderDfs(node.right)
+            // lats
+        }
+        inOrderDfs(root)
+        return res
+    }
+}
